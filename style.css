@@ -25,7 +25,9 @@ a {
 }
 
 #menu {
-    display: block;
+    
+     display: flex;
+   justify-content: flex-start;
 }
 
 #crypto {
@@ -45,7 +47,7 @@ a {
 }
 
 .btn {
-    background-color: #003263;
+    background-color: #D4AF37;
     color: white;
     width: 227px;
     height: 46px;
