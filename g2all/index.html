@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PS4 7.00 - 9.60 sabry</title>
-<link rel="stylesheet" href="../style.css">
-	<style >
-   body{
-    background-image: url('img.jpeg') no-repeat center center  cover fixed;
-   }
-
+<title>PS4 7.00 - 11.02 FW GoldHEN Host by GamerHack</title>
+<link rel="stylesheet" href="../styl.css">
+<style>
+  html {
+    background-image: url('img.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
 </style>
 </head>
 <body>
+<h1 id=msgs>تعديل المهندس احمد صبري  </h1>
+ <h1 id =nom> 0 1 0 9 6 6 0 9 0 0 0</h1>
 <script>
 var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
@@ -18,9 +27,13 @@ var isPS4 = match !== null;
 var fwVersion = isPS4 ? match[1] : "Unknown";
 var fwNum = parseFloat(fwVersion);
 
+function onScriptError() {
+    msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+}
+
 if (!isPS4) {
     document.addEventListener("DOMContentLoaded", () => {
-        msgs.innerHTML = "Only for PS4 with Firmware 7.00 to 9.60";
+        msgs.innerHTML = "Only for PS4 with Firmware 7.00 to 11.02";
     });
 } else {
     if (window.applicationCache.status == '0') {
@@ -28,6 +41,8 @@ if (!isPS4) {
             window.location.replace("cache700.html");
         } else if (fwNum >= 9.00 && fwNum <= 9.60) {
             window.location.replace("cache900.html");
+        } else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            window.location.replace("cachecss.html");
         } else {
             document.addEventListener("DOMContentLoaded", () => {
                 msgs.innerHTML = 'Unsupported Firmware: <span style="color: red;">' + fwVersion + '</span>';
@@ -38,29 +53,34 @@ if (!isPS4) {
             var script = document.createElement('script');
             script.type = 'module';
             script.src = "700/alert.js";
+            script.onerror = onScriptError;
             document.head.appendChild(script);
-        } 
+        }
         else if (fwNum >= 9.00 && fwNum <= 9.60) {
             var script = document.createElement('script');
             script.type = 'module';
             script.src = "900/alert.js";
-			
-			// This message should only appear if the user updated from 7.XX/8.XX to 9.XX and is currently offline.
-			script.onerror = function() {
-                msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            var script = document.createElement('script');
+            script.src = "css/main.js";
+            script.onerror = onScriptError;
+            script.onload = function () {
+                setTimeout(function () {
+                    doJb();
+                }, 500);
             };
-			
             document.head.appendChild(script);
         }
     }
 }
 </script>
-<h1 id="msgs">ـــــــــــــ تعديل المهند س احمد  صبري ــــــــــــ</h1>
-<h1 id="msgs">0 1 0 9 6 6 0 9 0 0 0 </h1>
-<h2   >صلى علي النبي </h2>
+<h1>PS4 7.00 - 11.02 FW GoldHEN Host by BARAKAT</h1>
+
+
 <h1 id=msgs style="font-size: 30px;margin-bottom: 455px;">Loading GoldHEN v2.4b18.10... Please Wait</h1>
-
-
-<h1 style="margin-top: 43px;">Special Thanks to:<a href="https://github.com/abomsalam20" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@abomsalam20</a></h1>
+<h1 style="margin-top: 78px;">Designed by:<a href="https://github.com/abomsalam20" style="color: yellow;margin-left: 10px;margin-right: 10px;">@abomsalam20</a>A special thanks to all the devs on the scene.</h1>
 </body>
 </html>
